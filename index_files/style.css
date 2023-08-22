@@ -1,0 +1,254 @@
+@charset "utf-8";
+
+/*
+ *
+ * Usage: Base layout
+ *
+ * Name: style.css
+ *
+ */
+
+/* FONT size
+---------------------------------------------------------------------
+[ px ]	[ % ]
+10px 	83  %		19px 	158 %
+11px 	92  %		20px 	167 %
+12px 	100 %		21px 	175 %
+13px 	108 %		22px 	183 %
+14px 	117 %		23px 	192 %
+15px 	125 %		24px 	200 %
+16px 	133 %		25px 	208 %
+17px 	142 %		26px 	217 %
+18px 	150 %
+---------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------
+setting
+---------------------------------------------------------------------*/
+html,body   {height:100%;}
+body  {min-width:1024px; width:100%; color:#333; background:#fffdf5;}
+body a  {color:#666;}
+
+::selection {background:#ffe992; color:#333;}
+::-moz-selection {background:#ffe992; color:#333;}
+
+
+/*---------------------------------------------------------------------
+CSS3 animation & parts layout
+---------------------------------------------------------------------*/
+/* link */
+a img         {opacity:1; filter:alpha(opacity=100);  -webkit-transition:all 0.2s ease-in; -moz-transition:all 0.2s ease-in; transition:all 0.2s ease-in;}
+a:hover img   {opacity:0.7; filter:alpha(opacity=70); -webkit-transition:all 0.2s ease-in; -moz-transition:all 0.2s ease-in; transition:all 0.2s ease-in;}
+a             {-moz-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in;}
+a:hover       {-moz-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in;}
+.opa_bg a,
+.opa_bg input        {opacity:1; -moz-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in;}
+.opa_bg a:hover,
+.opa_bg input:hover  {opacity:0.7; -moz-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in;}
+.trans_bg a          {display:block; overflow:hidden; height:0; opacity:1; filter:alpha(opacity=100); -moz-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition: all 0.2s ease-in;}
+.trans_bg a:hover    {opacity:0; filter:alpha(opacity=0); -moz-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition: all 0.2s ease-in;}
+
+.a_bound  {-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+           -moz-transition:    all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+           -ms-transition:     all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+           transition:         all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);}
+
+.obj  {position:absolute;}
+
+/*---------------------------------------------------------------------
+Common layout
+---------------------------------------------------------------------*/
+#header  {text-align:center; height:175px; margin-bottom:80px; position:relative;}
+    #header h1  {padding-top:80px;}
+
+#fixNav  {position:absolute; bottom:0; left:0; width:100%; height:60px; z-index:999; overflow:hidden;}
+    #fixNav ul       {padding-top:14px; position:relative;}
+    #fixNav ul li    {display:inline-block; margin:0 10px; text-align:center;}
+    #fixNav ul li a  {display:block; position:relative; padding-bottom:10px;}
+    #fixNav ul li a:after  {-moz-transition:    all 0.1s ease-out 0s;
+                            -webkit-transition: all 0.1s ease-out 0s;
+                            -ms-transition:     all 0.1s ease-out 0s;
+                            transition:         all 0.1s ease-out 0s;
+                            content:''; position:absolute; bottom:0; left:0; width:0; height:8px;}
+    #fixNav ul li a:hover:after,
+    #fixNav ul li a.active:after  {width:100%;}
+    
+    #fixNav ul .gnav01  {width:83px;}
+    #fixNav ul .gnav02  {width:103px;}
+    #fixNav ul .gnav03  {width:90px;}
+    #fixNav ul .gnav04  {width:72px;}
+    #fixNav ul .gnav05  {width:66px;}
+    
+    #fixNav ul .gnav01 a:after  {background:url(../images/common/line_gnav01.png) no-repeat 0 100%;}
+    #fixNav ul .gnav02 a:after  {background:url(../images/common/line_gnav02.png) no-repeat 0 100%;}
+    #fixNav ul .gnav03 a:after  {background:url(../images/common/line_gnav03.png) no-repeat 0 100%;}
+    #fixNav ul .gnav04 a:after  {background:url(../images/common/line_gnav04.png) no-repeat 0 100%;}
+    #fixNav ul .gnav05 a:after  {background:url(../images/common/line_gnav05.png) no-repeat 0 100%;}
+    
+    #fixNav #gnavBG  {background:#fffdf5; position:absolute; top:0; left:0; width:100%; height:60px;}
+    
+
+#footer  {text-align:center; padding:70px 0;}
+#btnPagetop  {position:fixed; bottom:60px; right:45px;}
+
+
+/* wrapper */
+#wrapper    {width:100%; min-width:1024px; overflow:hidden;}
+#container  {width:900px; margin:0 auto; position:relative;}
+#pageTitle  {text-align:center; margin-bottom:75px;}
+
+
+/*---------------------------------------------------------------------
+Top layout
+---------------------------------------------------------------------*/
+#topWrapper   {width:100%; min-width:1024px; max-width:1920px; margin:0 auto; overflow:hidden; position:relative; text-align:center; height:2000px;}
+#wrapInner    {min-width:1200px; max-width:1920px; position:absolute; left:50%; margin-left:-600px;}
+
+    #topWrapper .box  {-moz-transition:    all 0.3s ease 0s;
+                       -webkit-transition: all 0.3s ease 0s;
+                       -ms-transition:     all 0.3s ease 0s;
+                       transition:         all 0.3s ease 0s;
+                       position:relative; display:inline-block; vertical-align:top;}
+        #topWrapper .box dt  {position:absolute; z-index:10;}
+        #topWrapper .box dd img  {width:100%;}
+
+    #topWrapper #box01  {width:30%; margin-top:150px;}
+    #topWrapper #box02  {width:25%; margin:0 60px;}
+    #topWrapper #box03  {width:30%; margin-top:210px;}
+    
+    #topWrapper #box04  {width:25%; margin-top:275px;}
+    #topWrapper #box05  {width:25%; margin:540px 100px 0 108px;}
+    #topWrapper #box06  {width:25%; margin-top:185px;}
+    
+    #topWrapper #box07  {width:30%; margin-top:25px;}
+    #topWrapper #box09  {width:30%; margin:545px 60px 0 15px;}
+    #topWrapper #box08  {width:25%; margin-top:175px;}
+    
+    #topWrapper #box01 dt  {top:16px; right:-38px;}
+    #topWrapper #box02 dt  {bottom:23px; left:-35px;}
+    #topWrapper #box03 dt  {bottom:16px; left:-47px;}
+    #topWrapper #box04 dt  {top:15px; left:-46px;}
+    #topWrapper #box05 dt  {bottom:34px; left:-50px;}
+    #topWrapper #box06 dt  {bottom:23px; left:-22px;}
+    #topWrapper #box07 dt  {top:30px; right:-40px;}
+    #topWrapper #box08 dt  {top:42px; left:-72px;}
+    #topWrapper #box09 dt  {top:22px; left:-40px;}
+
+    #topWrapper #obj01  {top:490px; left:2%;}
+    #topWrapper #obj02  {top:503px; left:40%;}
+    #topWrapper #obj03  {top:100px; right:2%;}
+    #topWrapper #obj04  {top:707px; left:35%;}
+    #topWrapper #obj05  {top:880px; left:52%;}
+    #topWrapper #obj06  {top:1320px; left:2%;}
+    #topWrapper #obj07  {top:1230px; right:6%;}
+    #topWrapper #obj08  {top:1420px; right:2%;}
+    #topWrapper #obj09  {top:1675px; left:45%;}
+    #topWrapper #obj10  {top:1760px; left:2%;}
+    #topWrapper #obj11  {top:1980px; left:8%;}
+    #topWrapper #obj12  {top:1920px; right:2%;}
+
+    #topWrapper .obj img  {-moz-transition:    all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+                           -webkit-transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+                           -ms-transition:     all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+                           transition:         all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+
+/*---------------------------------------------------------------------
+Profile layout
+---------------------------------------------------------------------*/
+#profile #container  {padding-bottom:160px;}
+
+#profile #profImg  {width:280px; margin:0 auto 65px auto; position:relative;}
+    #profile #profImg dd  {position:absolute; bottom:-46px; right:-136px;}
+
+#profile #profTxt  {width:410px; margin:0 auto 120px auto;}
+    #profile #profTxt h3  {margin-bottom:35px;}
+    #profile #profTxt #txt01  {margin-bottom:65px;}
+    #profile #profTxt #txt02  {margin-bottom:80px;}
+    #profile #profTxt #txt03  {margin-bottom:60px;}
+
+#profile #sns  {background:url(../images/profile/bg_sns.png) no-repeat 0 0; width:179px; height:84px; margin:0 auto; text-align:center;}
+    #profile #sns li  {display:inline-block; padding-top:30px; margin:0 9px;}
+
+#profile #obj01  {top:94px; right:92px;}
+#profile #obj02  {top:250px; left:123px;}
+#profile #obj03  {top:600px; left:20px;}
+#profile #obj04  {top:753px; right:0;}
+#profile #obj05  {top:1110px; right:87px;}
+
+
+
+/*---------------------------------------------------------------------
+Works layout
+---------------------------------------------------------------------*/
+#works #container  {padding-bottom:230px;}
+
+#works #worksList  {width:680px; margin:0 auto;}
+    #works #worksList li  {float:left; margin:0 40px 40px 0; width:200px;}
+    #works #worksList li:nth-child(3n)  {margin-right:0;}
+    #works #worksList li img  {width:100%;}
+
+
+/* overlay */
+#ovBox #ovPhoto  {margin-bottom:30px; text-align:center;}
+    #ovBox #ovPhoto img  {max-width:800px;}
+
+#ovBox #ovTxt  {width:400px; margin:0 auto;}
+    #ovBox #ovTxt h3  {font-size:133%; font-weight:bold; margin-bottom:15px; line-height:150%;}
+    #ovBox #ovTxt p   {margin-bottom:25px;}
+    #ovBox #ovTxt a   {background:#333;}
+
+
+/*---------------------------------------------------------------------
+Lesson layout
+---------------------------------------------------------------------*/
+#lesson #container  {padding-bottom:120px;}
+
+#lesson .section  {width:640px; margin:0 auto; position:relative;}
+    #lesson .section .img  {position:absolute;}
+    #lesson .section p     {position:relative; z-index:10;}
+
+#lesson #section01  {padding:75px 0;}
+    #lesson #section01 #img01  {top:0; right:0;}
+    #lesson #section01 h3      {margin-bottom:60px;}
+    #lesson #section01 #txt01  {margin-bottom:87px;}
+
+#lesson #section02  {height:755px;}
+    #lesson #section02 #img02  {top:150px; left:-130px;}
+    #lesson #section02 #img03  {bottom:0; right:13px;}
+    #lesson #section02 #txt04  {position:absolute; bottom:60px; left:-46px;}
+    #lesson #section02 #txt03  {text-align:right;}
+        #lesson #section02 #txt03 a  {position:absolute; bottom:0; right:185px;}
+
+
+/*---------------------------------------------------------------------
+Blog layout
+---------------------------------------------------------------------*/
+#blog #container  {padding-bottom:140px;}
+
+#blog #article  {width:480px; margin:0 auto;}
+    #blog #article .entry  {border-top:1px solid #000; padding:45px 0 130px 0;}
+    #blog #article .entry_head  {text-align:center; margin-bottom:55px;}
+        #blog #article .entry_head h3  {margin-bottom:14px; font-weight:bold; font-size:117%;}
+        #blog #article .entry_head p   {font-size:117%;}
+
+    #blog #article .entry_body  {}
+        #blog #article .entry_body .img  {margin-bottom:45px; text-align:center;}
+        #blog #article .entry_body .txt  {margin-bottom:30px; line-height:200%;}
+
+
+#blog #pagenate  {border-top:1px solid #000; text-align:center; position:relative; padding-top:35px; font-weight:bold; font-size:117%;}
+    #blog #pagenate .pages  {display:none;}
+    #blog #pagenate .previouspostslink  {background:url(../images/blog/btn_prev.png) no-repeat 0 0; position:absolute; top:33px; left:0; display:block; width:33px; height:0; padding-top:20px; overflow:hidden;}
+    #blog #pagenate .nextpostslink      {background:url(../images/blog/btn_next.png) no-repeat 0 0; position:absolute; top:33px; right:0; display:block; width:33px; height:0; padding-top:20px; overflow:hidden;}
+    #blog #pagenate .current,
+    #blog #pagenate .page  {display:inline-block; margin:0 4px; vertical-align:middle;}
+
+
+
+
+
+
+
+
